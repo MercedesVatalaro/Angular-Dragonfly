@@ -1,0 +1,9 @@
+.clearance{
+
+  border: 2px solid green;
+  background: lightgreen;
+}
+.img-thumbnail{
+width:200px; 
+height:200px;
+}

@@ -1,0 +1,25 @@
+<table class="table">
+<thead>
+  <tr>
+    <td>Image</td>
+<td>Name</td>
+<td>Brand</td>
+<td>Size</td>
+<td>Price</td>
+<td>Stock</td>
+  </tr>
+</thead>
+<tbody>
+  
+
+<tr *ngFor="let fragrance of fragrances" [ngClass]="{'clearance': fragrance.clearance}">
+  <td><img [src]="fragrance.image" class="img-thumbnail" [alt]="fragrance.name"></td>
+  <td>{{fragrance.name}}</td>
+  <td>{{fragrance.brand}}</td>
+  <td>{{fragrance.size}}</td>
+  <td>{{fragrance.price | currency}}</td>
+  <td><span class="badge text-bg-warning" *ngIf="fragrance.stock==0">SIN STOCK</span></td>
+</tr>
+
+</tbody>
+</table>
