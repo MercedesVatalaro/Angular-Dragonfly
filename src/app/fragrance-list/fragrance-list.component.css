@@ -1,7 +1,7 @@
 .clearance{
 
-  border: 2px solid green;
-  background: lightgreen;
+  border: 1px solid rgb(5, 133, 5);
+  background: rgb(238, 144, 180);
 }
 .img-thumbnail{
 width:150px; 
