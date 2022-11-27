@@ -7,6 +7,7 @@
 <td>Size</td>
 <td>Price</td>
 <td>Stock</td>
+<td>Purchase</td>
   </tr>
 </thead>
 <tbody>
@@ -19,6 +20,9 @@
   <td>{{fragrance.size}}</td>
   <td>{{fragrance.price | currency}}</td>
   <td><span class="badge text-bg-warning" *ngIf="fragrance.stock==0">SIN STOCK</span></td>
+  <td><button class="btn btn-outline-secondary btn-sm" (click)="downQuantity(fragrance)">-</button>
+    <input type="text" [(ngModel)]="fragrance.quantity" (keyup)="onChangeQuantity($event, fragrance)" >
+    <button class="btn btn-outline-secondary btn-sm" btn-sm (click)="upQuantity(fragrance)">+</button></td>
 </tr>
 
 </tbody>

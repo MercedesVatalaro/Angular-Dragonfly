@@ -16,6 +16,7 @@ price : 11000,
 image: "assets/img/flower.png",
 stock: 15,
 clearance: true,
+quantity:0,
 },
 {
   name: "NR",
@@ -25,6 +26,7 @@ clearance: true,
   image: "assets/img/nina.png",
   stock: 10,
   clearance: false,
+  quantity:0,
   },
   {
     name: "Carolina Herrera",
@@ -34,6 +36,7 @@ clearance: true,
     image: "assets/img/ch.png",
     stock:0,
     clearance: false,
+    quantity:0,
     },
 ];
 
@@ -43,5 +46,19 @@ clearance: true,
 
   ngOnInit(): void {
   }
+
+upQuantity(fragrance :Fragrance): void{
+  if(fragrance.quantity < fragrance.stock)
+  fragrance.quantity++;
+
+}
+downQuantity(fragrance: Fragrance): void{
+if(fragrance.quantity > 0)
+  fragrance.quantity--;
+
+}
+onChangeQuantity(event: { key: any; }, fragrance: Fragrance): void{
+console.log(event.key)
+}
 
 }

@@ -6,4 +6,5 @@ price: number;
 image: string;
 stock: number;
 clearance: boolean;
+quantity: number;
 }
