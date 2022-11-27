@@ -21,11 +21,9 @@
   <td>{{fragrance.price | currency}}</td>
   <td><span class="badge text-bg-warning" *ngIf="fragrance.stock==0">SIN STOCK</span></td>
   <td>
-    <div class="input-group">
-    <button class="btn btn-outline-secondary btn-sm" (click)="downQuantity(fragrance)">-</button>
-    <input type="text" class="text-center" [(ngModel)]="fragrance.quantity" (keyup)="onChangeQuantity($event, fragrance)" >
-    <button class="btn btn-outline-secondary btn-sm" btn-sm (click)="upQuantity(fragrance)">+</button>
-  </div>
+    <app-input-integer [(quantity)]="fragrance.quantity" [max]="fragrance.stock" *ngIf="fragrance.stock"></app-input-integer>
+
+
   </td>
 </tr>
 

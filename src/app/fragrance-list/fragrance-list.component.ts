@@ -47,18 +47,4 @@ quantity:0,
   ngOnInit(): void {
   }
 
-upQuantity(fragrance :Fragrance): void{
-  if(fragrance.quantity < fragrance.stock)
-  fragrance.quantity++;
-
-}
-downQuantity(fragrance: Fragrance): void{
-if(fragrance.quantity > 0)
-  fragrance.quantity--;
-
-}
-onChangeQuantity(event: { key: any; }, fragrance: Fragrance): void{
-console.log(event.key)
-}
-
 }

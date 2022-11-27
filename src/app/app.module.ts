@@ -9,6 +9,7 @@ import { DragonflyFragrancesComponent } from './dragonfly-fragrances/dragonfly-f
 import { DragonflyCartComponent } from './dragonfly-cart/dragonfly-cart.component';
 
 import {AppRoutingModule} from './app-routing.module';
+import { InputIntegerComponent } from './input-integer/input-integer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {AppRoutingModule} from './app-routing.module';
     FragranceListComponent,
     DragonflyContactComponent,
     DragonflyFragrancesComponent,
-    DragonflyCartComponent
+    DragonflyCartComponent,
+    InputIntegerComponent
   ],
   imports: [
     BrowserModule,
