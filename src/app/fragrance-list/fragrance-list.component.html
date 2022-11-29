@@ -22,7 +22,7 @@
   <td><span class="badge text-bg-warning" *ngIf="fragrance.stock==0">SIN STOCK</span></td>
   <td>
     <app-input-integer [(quantity)]="fragrance.quantity" [max]="fragrance.stock" *ngIf="fragrance.stock"></app-input-integer>
-
+    <button class="btn btn-primary" (click)="addToCart(fragrance)">Comprar</button>
 
   </td>
 </tr>

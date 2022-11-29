@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FragranceCartService } from '../fragrance-cart.service';
+import { Fragrance } from '../fragrance-list/fragrance';
 
 @Component({
   selector: 'app-dragonfly-cart',
@@ -7,7 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DragonflyCartComponent implements OnInit {
 
-  constructor() { }
+  cartList$: Observable<Fragrance[]>;
+
+  constructor(private cart: FragranceCartService) { 
+    
+    this.cartList$=  cart.cartList.asObservable();
+   
+  }
 
   ngOnInit(): void {
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FragranceCartService } from '../fragrance-cart.service';
 import { Fragrance } from './fragrance';
 
 @Component({
@@ -39,12 +40,25 @@ quantity:0,
     quantity:0,
     },
 ];
+  
 
 
 
-  constructor() { }
+  constructor(private cart: FragranceCartService) { 
+    
+    
+  }
 
   ngOnInit(): void {
   }
+
+  addToCart(fragrance: any): void{
+    
+    this.cart.addToCart(fragrance);
+    fragrance.stock-= fragrance.quantity;
+    fragrance.quantity=0;
+
+  }
+
 
 }
