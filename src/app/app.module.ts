@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { FragranceListComponent } from './fragrance-list/fragrance-list.component';
+import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DragonflyContactComponent } from './dragonfly-contact/dragonfly-contact.component';
 import { DragonflyFragrancesComponent } from './dragonfly-fragrances/dragonfly-fragrances.component';
@@ -24,6 +25,7 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

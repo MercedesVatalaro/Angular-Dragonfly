@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FragranceCartService } from '../fragrance-cart.service';
+import { FragranceDataService } from '../fragrance-data.service';
 import { Fragrance } from './fragrance';
 
 @Component({
@@ -9,7 +10,8 @@ import { Fragrance } from './fragrance';
 })
 export class FragranceListComponent implements OnInit {
 
-fragrances: Fragrance []= [{
+fragrances: Fragrance []= [];
+/*[{
 name: "Flower",
 brand: "Kenso",
 size : 50,
@@ -39,17 +41,21 @@ quantity:0,
     clearance: false,
     quantity:0,
     },
-];
+];*/
   
 
 
 
-  constructor(private cart: FragranceCartService) { 
+  constructor(
+    private cart: FragranceCartService,
+    private data: FragranceDataService) { 
     
     
   }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
+      this.data.getAll()
+      .subscribe(fragrances => this.fragrances = fragrances);
   }
 
   addToCart(fragrance: any): void{
