@@ -1,9 +1,8 @@
-<h5>Carrito de compras</h5>
+<h5>Cart</h5>
 <ul>
-<li *ngFor="let fragrance of cartList$ | async">
+  <li *ngFor="let fragrance of cartList$ | async">
+    {{fragrance.name}}:{{fragrance.quantity}}
 
-{{fragrance.name}}:{{fragrance.quantity}}
-
-
-</li>
+    <button class="btn btn-outline-secondary btn-sm">Delete</button>
+  </li>
 </ul>

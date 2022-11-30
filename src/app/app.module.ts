@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { DragonflyContactComponent } from './dragonfly-contact/dragonfly-contact.component';
 import { DragonflyFragrancesComponent } from './dragonfly-fragrances/dragonfly-fragrances.component';
 import { DragonflyCartComponent } from './dragonfly-cart/dragonfly-cart.component';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
 
@@ -26,6 +26,7 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

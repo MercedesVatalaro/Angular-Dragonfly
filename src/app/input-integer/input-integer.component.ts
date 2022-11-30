@@ -9,8 +9,8 @@ import { Fragrance } from '../fragrance-list/fragrance';
 export class InputIntegerComponent implements OnInit {
 
   constructor() {
-        
-   }
+
+  }
 
   @Input()
   quantity!: number;
@@ -19,29 +19,29 @@ export class InputIntegerComponent implements OnInit {
   max!: number;
 
   @Output()
-  quantityChange: EventEmitter<number>= new EventEmitter<number>();
+  quantityChange: EventEmitter<number> = new EventEmitter<number>();
 
-  
+
 
   ngOnInit(): void {
-    
+
   }
-  
-  upQuantity(): void{
-    if(this.quantity < this.max){
-    this.quantity++;
-    this.quantityChange.emit(this.quantity);
+
+  upQuantity(): void {
+    if (this.quantity < this.max) {
+      this.quantity++;
+      this.quantityChange.emit(this.quantity);
     }
   }
-  downQuantity(): void{
-  if(this.quantity > 0)
-    this.quantity--;
+  downQuantity(): void {
+    if (this.quantity > 0)
+      this.quantity--;
     this.quantityChange.emit(this.quantity);
-  
+
   }
-  onChangeQuantity(event: { key: any; }): void{
-  console.log(event.key)
-  this.quantityChange.emit(this.quantity);
+  onChangeQuantity(event: { key: any; }): void {
+    console.log(event.key)
+    this.quantityChange.emit(this.quantity);
   }
 
 }

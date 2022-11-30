@@ -11,7 +11,7 @@
   </tr>
 </thead>
 <tbody>
-  
+
 
 <tr *ngFor="let fragrance of fragrances" [ngClass]="{'clearance': fragrance.clearance}">
   <td><img [src]="fragrance.image" class="img-thumbnail" [alt]="fragrance.name"></td>
@@ -22,7 +22,7 @@
   <td><span class="badge text-bg-warning" *ngIf="fragrance.stock==0">SIN STOCK</span></td>
   <td>
     <app-input-integer [(quantity)]="fragrance.quantity" [max]="fragrance.stock" *ngIf="fragrance.stock"></app-input-integer>
-    <button class="btn btn-primary btn-sm" (click)="addToCart(fragrance)">Comprar</button>
+    <button class="btn btn-primary btn-sm" (click)="addToCart(fragrance)">Buy now</button>
 
   </td>
 </tr>
