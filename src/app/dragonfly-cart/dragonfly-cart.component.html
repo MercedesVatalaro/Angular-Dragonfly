@@ -1,4 +1,4 @@
-<h5>Cart</h5>
+<!--<h5>Cart</h5>
 <ul>
   <li *ngFor="let fragrance of cartList$ | async">
     {{fragrance.name}}:{{fragrance.quantity}}
@@ -6,4 +6,28 @@
   <button class="btn btn-outline-secondary btn-sm" (click)="deleteToCart(fragrance)">Delete</button>
   </li>
 
-</ul>
+</ul>-->
+<div class="container">
+  <h1>Cart</h1>
+  <hr>
+  <table class="table">
+    <thead>
+      <tr *ngFor="let fragrance of cartList$ | async">
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">
+        {{fragrance.name}}:{{fragrance.quantity}}
+      </th>
+      <button class="btn btn-outline-secondary btn-sm" (click)="deleteToCart(fragrance)">Delete</button>
+      </tr>
+     </thead>
+    <tbody id="items"></tbody>
+    <tfoot>
+      <tr id="footer">
+      <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+      </tr>
+    </tfoot>
+   
+    </table>
+  <div class="row" id="cards"></div>
+</div>
