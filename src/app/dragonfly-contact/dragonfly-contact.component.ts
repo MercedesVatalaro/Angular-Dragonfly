@@ -20,10 +20,18 @@ export class DragonflyContactComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
+
+      }
+
+  onResetForm(): void{
+
+    this.contactForm.reset();
+
+  }    
   onSubmit() {
 
-    console.warn( "El formulario se envio correctamnete" ,this.contactForm.value);
+    console.warn( "El formulario se envio correctamente" ,this.contactForm.value);
+    this.onResetForm();
   }
 
 
