@@ -12,13 +12,20 @@ export class DragonflyCartComponent implements OnInit {
 
   cartList$: Observable<Fragrance[]>;
 
-  constructor(private cart: FragranceCartService) { 
-    
+  constructor(private cart: FragranceCartService) {
+
     this.cartList$=  cart.cartList.asObservable();
-   
+
   }
 
   ngOnInit(): void {
+  }
+  deleteToCart(fragrance: Fragrance): void {
+
+    this.cart.deleteToCart();
+    fragrance.stock += fragrance.quantity;
+    fragrance.quantity = 0;
+
   }
 
 }

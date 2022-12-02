@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dragonfly-contact.component.css']
 })
 export class DragonflyContactComponent implements OnInit {
-
+ // FragranceCartService: any;
+ contactForm = new FormGroup({
+  firstName: new FormControl(''),
+  lastName: new FormControl(''),
+  email: new FormControl(''),
+  message: new FormControl('')
+});
 
 
   constructor() { }
@@ -16,6 +23,8 @@ export class DragonflyContactComponent implements OnInit {
   }
   onSubmit() {
 
-    console.log("Los datos se enviaron exitosamente");
+    console.warn( "El formulario se envio correctamnete" ,this.contactForm.value);
   }
+
+
 }

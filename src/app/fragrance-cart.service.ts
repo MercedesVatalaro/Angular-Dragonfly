@@ -6,9 +6,9 @@ import { Fragrance } from './fragrance-list/fragrance';
   providedIn: 'root'
 })
 export class FragranceCartService {
-  deleteToCart(fragrance: any) {
+  /*deleteToCart(fragrance: any) {
     throw new Error('Method not implemented.');
-  }
+  }*/
 
 
   private _cartList: Fragrance[] = [];
@@ -18,16 +18,25 @@ export class FragranceCartService {
 
   addToCart(fragrance: Fragrance) {
 
-    let item: Fragrance | undefined = this._cartList.find((v1) => v1.name == fragrance.name);
-    if (!item) {
+    let index = this._cartList.findIndex((v1) => v1.name == fragrance.name);
+    if (index === -1) {
       this._cartList.push({ ...fragrance });
 
     } else {
-      item.quantity += fragrance.quantity;
+      //index.quantity += fragrance.quantity;
+      this._cartList[index].quantity= fragrance.quantity;
     }
-    console.log(this._cartList);
+    //console.log(this._cartList);
     this.cartList.next(this._cartList);
+    if(fragrance.quantity==0)
+    this._cartList.splice(index, 1);
+
   }
 
+  deleteToCart(){
+
+    this._cartList.splice(0, this._cartList.length);
+    console.log("adentro")
+  }
 
 }

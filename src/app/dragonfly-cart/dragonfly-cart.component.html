@@ -3,6 +3,7 @@
   <li *ngFor="let fragrance of cartList$ | async">
     {{fragrance.name}}:{{fragrance.quantity}}
 
-    <button class="btn btn-outline-secondary btn-sm">Delete</button>
+  <button class="btn btn-outline-secondary btn-sm" (click)="deleteToCart(fragrance)">Delete</button>
   </li>
+
 </ul>
